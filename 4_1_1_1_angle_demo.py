@@ -40,6 +40,14 @@ def create_angle(angle_measure: float,
 
 class AngleDemonstration(Scene):
     def construct(self):
+        straight_angle = create_angle(angle_measure=np.pi).move_to((0, 0, 0))
+        self.play(FadeIn(straight_angle), run_time=2)
+        self.play(straight_angle.animate.scale(0.7).to_edge(DOWN), run_time=2)
+
+        right_angle = create_angle(angle_measure=np.pi / 2).move_to((0, 0, 0))
+        self.play(FadeIn(right_angle), run_time=2)
+        self.play(right_angle.animate.scale(0.7).to_edge(UP), run_time=2)
+
         acute_angle1 = create_angle(angle_measure=np.pi/6).move_to((0, 0, 0))
         acute_angle2 = create_angle(angle_measure=np.pi/4).move_to((0, 0, 0))
         acute_angle3 = create_angle(angle_measure=np.pi/3).move_to((0, 0, 0))
@@ -50,10 +58,6 @@ class AngleDemonstration(Scene):
         self.play(FadeIn(acute_angle3), run_time=2)
         self.play(acute_angle3.animate.scale(0.7).next_to(acute_angle2, DOWN, aligned_edge=LEFT), run_time=2)
 
-        right_angle = create_angle(angle_measure=np.pi/2).move_to((0, 0, 0))
-        self.play(FadeIn(right_angle), run_time=2)
-        self.play(right_angle.animate.scale(0.7).to_edge(UP), run_time=2)
-
         obtuse_angle1 = create_angle(angle_measure=2*np.pi/3).move_to((0, 0, 0))
         obtuse_angle2 = create_angle(angle_measure=3*np.pi/4).move_to((0, 0, 0))
         obtuse_angle3 = create_angle(angle_measure=5*np.pi/6).move_to((0, 0, 0))
@@ -63,9 +67,5 @@ class AngleDemonstration(Scene):
         self.play(obtuse_angle2.animate.scale(0.7).next_to(obtuse_angle1, DOWN, aligned_edge=RIGHT), run_time=2)
         self.play(FadeIn(obtuse_angle3), run_time=2)
         self.play(obtuse_angle3.animate.scale(0.7).next_to(obtuse_angle2, DOWN, aligned_edge=RIGHT), run_time=2)
-
-        straight_angle = create_angle(angle_measure=np.pi).move_to((0, 0, 0))
-        self.play(FadeIn(straight_angle), run_time=2)
-        self.play(straight_angle.animate.scale(0.7).move_to(DOWN), run_time=2)
 
         self.wait(2)
