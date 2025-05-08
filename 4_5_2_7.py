@@ -42,7 +42,7 @@ class Picture_4_5_2_7(Scene):
 
         arcctan_graph = ax.plot(arccot, x_range=[-np.pi, np.pi], color=R_RED)
         self.play(Write(arcctan_graph), run_time=3)
-        arcctan_label = ax.get_graph_label(arcctan_graph, MathTex('y = arcctan(x)'), x_val=-1, direction=DL + 0.9 * DOWN + 0.9 * LEFT)
+        arcctan_label = ax.get_graph_label(arcctan_graph, MathTex('y = arcctg(x)'), x_val=-1, direction=DL + 0.9 * DOWN + 0.9 * LEFT)
         self.play(Write(arcctan_label), run_time=2)
 
         # График y = x

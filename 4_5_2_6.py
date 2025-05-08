@@ -38,7 +38,7 @@ class Picture_4_5_2_6(Scene):
         # График арктангенса
         arctan_graph = ax.plot(lambda x: np.arctan(x), x_range=[-np.pi, np.pi], color=R_RED)
         self.play(Write(arctan_graph), run_time=3)
-        arctan_label = ax.get_graph_label(arctan_graph, MathTex('y = arctan(x)'), x_val=-1, direction=DL + 0.9 * DOWN + 0.9 * LEFT)
+        arctan_label = ax.get_graph_label(arctan_graph, MathTex('y = arctg(x)'), x_val=-1, direction=DL + 0.9 * DOWN + 0.9 * LEFT).shift(LEFT * 0.6 + UP * 0.6)
         self.play(Write(arctan_label), run_time=2)
 
         # График y = x
